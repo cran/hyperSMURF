@@ -14,7 +14,7 @@ hyperSMURF.test(data, HSmodel)
 
 \arguments{
   \item{data}{
-a data frame or matrix with the test data. Rows: exaples; columns: features
+a data frame or matrix with the test data. Rows: examples; columns: features
 }
   \item{HSmodel}{
 a list including the trained random forest models. The models have been trained with \code{\link{hyperSMURF.train.parallel}} or with \code{\link{hyperSMURF.train}}

@@ -12,10 +12,10 @@ hyperSMURF.test.thresh(data, HSmodel)
 
 \arguments{
   \item{data}{
-a data frame or matrix with the test data. Rows: exaples; columns: features
+a data frame or matrix with the test data. Rows: examples; columns: features
 }
   \item{HSmodel}{
-a list including the trained random forest models. The models have been trained with \code{\link{hyperSMURF.train.parallel}} or with \code{\link{hyperSMURF.train}}. The threshold is emebbede in the model according to the \code{cutoff} value set in the training phase.
+a list including the trained random forest models. The models have been trained with \code{\link{hyperSMURF.train.parallel}} or with \code{\link{hyperSMURF.train}}. The threshold is embedded in the model according to the \code{cutoff} value set in the training phase.
 }
 }
 \value{
@@ -26,11 +26,11 @@ a named vector with the computed probabilities for each example (HyeprSMURF thre
 \code{\link{hyperSMURF.test}}, \code{\link{hyperSMURF.test.parallel}}, \code{\link{hyperSMURF.train.parallel}}, \code{\link{hyperSMURF.train}}
 }
 \examples{
-train <- imbalanced.data.generator(n.pos=40, n.neg=1000, 
-         n.features=12, n.inf.features=2, sd=0.1, seed=1);
-HSmodel <- hyperSMURF.train(train$data, train$label, n.part = 9, 
+train <- imbalanced.data.generator(n.pos=20, n.neg=500, 
+         n.features=10, n.inf.features=2, sd=0.1, seed=1);
+HSmodel <- hyperSMURF.train(train$data, train$label, n.part = 5, 
                   fp = 1, ratio = 2, k = 5, cutoff=c(0.3, 0.7));
-test <- imbalanced.data.generator(n.pos=20, n.neg=1000, 
-         n.features=12, n.inf.features=2, sd=0.1, seed=2);
+test <- imbalanced.data.generator(n.pos=20, n.neg=500, 
+         n.features=10, n.inf.features=2, sd=0.1, seed=2);
 res <- hyperSMURF.test.thresh(test$data, HSmodel);
 }

@@ -46,10 +46,10 @@ a numeric vector of length 2. Cutoff for respectively the majority and minority 
 This parameter is meaningful when used with the thresholded version of hyperSMURF parameter (\code{thresh}=TRUE)
 }
   \item{thresh}{
-logical. If TRUE the thesholded version of hyperSMURF is exectuted (def: FALSE)
+logical. If TRUE the thresholded version of hyperSMURF is executed (def: FALSE)
 }
   \item{seed}{
-initialization seed for the random generator. If set to 0(def.) no inizialization is performed
+initialization seed for the random generator. If set to 0(def.) no initialization is performed
 }
   \item{fold.partition}{
 vector of size nrow(data) with values in interval [0,kk). The values indicate the fold of the cross validation of each example. 
@@ -60,7 +60,7 @@ name of the file where the cross-validated hyperSMURF models will be saved. If f
 }
 }
 \details{
-The cross-validation is performed by randomly constructing the folds (parameter \code{fold.partition} = NULL) or using a set of predefined folds listed in the parameter \code{fold.partition}. The cross validation is performed by training and testing in sequence the base random forests. More precisely for each training set constructed at each step of the cross validation a separated random forest is trained sequecailly for each of the \code{n.part} partitions of the data, by oversampling the minority class (parameter \code{fp}) and undersampling the majority class (parameter \code{ratio}). The random forest parameters \code{ntree} and \code{mtry} are the same for all the random forest of the hyper-ensemble.
+The cross-validation is performed by randomly constructing the folds (parameter \code{fold.partition} = NULL) or using a set of predefined folds listed in the parameter \code{fold.partition}. The cross validation is performed by training and testing in sequence the base random forests. More precisely for each training set constructed at each step of the cross validation a separated random forest is trained sequentially for each of the \code{n.part} partitions of the data, by oversampling the minority class (parameter \code{fp}) and undersampling the majority class (parameter \code{ratio}). The random forest parameters \code{ntree} and \code{mtry} are the same for all the random forest of the hyper-ensemble.
 }
 \value{
 a vector with the cross-validated hyperSMURF probabilities (hyperSMURF scores).

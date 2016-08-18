@@ -21,7 +21,7 @@ vector of integer: Indices of the positive examples. The indices refer to the in
 number of folds (def = 10)
 }
   \item{seed}{
-seed of the random generator (def=0). If is set to 0 no initializitation is performed
+seed of the random generator (def=0). If is set to 0 no initialization is performed
 }
 }
 \details{

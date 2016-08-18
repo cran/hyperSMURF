@@ -46,7 +46,7 @@ number of the features to be selected in the training set according to the absol
 If 0 (def), the top 5\% are selected.
 }
   \item{seed}{
-initialization seed for the random generator (if set to 0(def.) no inizialization is performed)
+initialization seed for the random generator (if set to 0(def.) no initialization is performed)
 }
   \item{fold.partition}{
 vector of size nrow(data) with values in interval \eqn{[0,kk)}. The values indicate the fold of the cross validation of each example. If NULL (default) the folds are randomly generated.
@@ -60,7 +60,7 @@ number of cores. If 0, the max number of cores - 1 is selected
 }
 \details{
 The cross-validation is performed by randomly constructing the folds (parameter \code{fold.partition} = NULL) or using a set of predefined folds listed in the parameter vector \code{fold.partition}. The cross validation is performed by training and testing in parallel the base random forests. To this end the parameter \code{ncores} allows to choose the number of cores to be used. Note that by selecting a large number of cores a larger primary memory is needed, and this can be an issue if the data to be analyzed are relatively large with respect to the available RAM memory.
-At each step of the cross validation a subset of features is selected on the traning set by choosing the features most correlated (according to the Pearson correlation) with the response variable and then the selected features are used to train and test the hyper-ensemble.
+At each step of the cross validation a subset of features is selected on the training set by choosing the features most correlated (according to the Pearson correlation) with the response variable and then the selected features are used to train and test the hyper-ensemble.
 }
 \value{
 a vector with the cross-validated hyperSMURF probabilities (hyperSMURF scores).
@@ -71,10 +71,9 @@ a vector with the cross-validated hyperSMURF probabilities (hyperSMURF scores).
 \code{\link{hyperSMURF.cv}}, \code{\link{hyperSMURF.cv.parallel}}
 }
 \examples{
-d <- imbalanced.data.generator(n.pos=10, n.neg=400, n.features=10, 
-                                n.inf.features=2, sd=0.3, seed=1);
-if (requireNamespace("foreach", quietly = TRUE) && 
-                     requireNamespace("doParallel", quietly = TRUE)) 
-    res<-hyperSMURF.corr.cv.parallel (d$data, d$labels, kk=2, n.part=3, fp=1, ratio=2, k=5, 
-	      ntree=7, mtry=2, n.feature=4, seed = 1, fold.partition=NULL, ncores=2, file="");
+d <- imbalanced.data.generator(n.pos=10, n.neg=160, n.features=7, 
+                                n.inf.features=1, sd=0.3, seed=1);
+if (Sys.info()['sysname']!="Windows")
+    res<-hyperSMURF.corr.cv.parallel (d$data, d$labels, kk=2, n.part=2, fp=1, ratio=2, k=5, 
+	      ntree=5, mtry=2, n.feature=3, seed = 1, fold.partition=NULL, ncores=2, file="");
 }

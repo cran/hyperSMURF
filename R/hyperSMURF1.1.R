@@ -181,6 +181,7 @@ hyperSMURF.train.parallel <- function (data, y, n.part=10, fp=1, ratio=1, k=5, n
 	                   y <- as.factor(c(rep(1,n.data.min.over), rep(0, length(indices.maj))));
                        randomForest(data.train, y, ntree = ntree, mtry = mtry, cutoff = cutoff);		  
    } # end foreach
+   stopImplicitCluster();
    gc();
    if (file!="")
      save(rf.list, file=file);
@@ -266,6 +267,7 @@ hyperSMURF.test.parallel <- function (data, HSmodel, ncores=0)  {
                                      gc();
                                      predict(HSmodel[[i]], data, type="prob")[,2];  
   }
+  stopImplicitCluster();
   gc();
   average.prob <- prob/n.models;
   names(average.prob) <- rownames(data);
@@ -372,12 +374,6 @@ hyperSMURF.cv.parallel <- function (data, y, kk=5, n.part=10, fp=1, ratio=1, k=5
   # loading parallel libraries and initialization
   #library(doParallel);
   #library(foreach);
-  if (ncores == 0) {
-    n.cores <- detectCores(); 
-    if (n.cores > 3)
-	  ncores <- n.cores - 1;
-  }
-  registerDoParallel(cores = ncores);
   
   n.data <- nrow(data);
   indices.positives <- which(y == 1);
@@ -456,12 +452,6 @@ hyperSMURF.corr.cv.parallel <- function (data, y, kk=5, n.part=10, fp=1, ratio=1
   # loading parallel libraries and initialization
   #library(doParallel);
   #library(foreach);
-  if (ncores == 0) {
-    n.cores <- detectCores(); 
-    if (n.cores > 3)
-	  ncores <- n.cores - 1;
-  }
-  registerDoParallel(cores = ncores);
   
   n.data <- nrow(data);
   indices.positives <- which(y == 1);

@@ -5,7 +5,7 @@ hyperSMURF training
 }
 \description{
 A hyperSMURF model is trained on a given data set. Training data are partitioned, and each RF is separately trained on each partition by SMOTE oversampling of the positives (minority class examples) and undersampling of the negatives (majority class examples). 
-Each RF is trained sequencially
+Each RF is trained sequentially
 }
 \usage{
 hyperSMURF.train(data, y, n.part = 10, fp = 1, ratio = 1, k = 5, ntree = 10, 
@@ -43,14 +43,14 @@ a numeric vector of length 2. Cutoff for respectively the majority and minority 
 This parameter is meaningful when used with the thresholded version of hyperSMURF (parameter \code{thresh}=TRUE)
 }
   \item{seed}{
-initialization seed for the random generator. If set to 0(def.) no inizialization is performed
+initialization seed for the random generator. If set to 0(def.) no initialization is performed
 }
   \item{file}{
 name of the file where the cross-validated hyperSMURF models will be saved. If file=="" (def.) no model is saved.
 }
 }
 \details{
-A different random forest is trained on each parition of the training set.
+A different random forest is trained on each partition of the training set.
 If \code{npos} and \code{nneg} are the the number of respectively the positive and negative examples, for each partition of the training data \code{fp*npos} new synthetic positives constructed by the SMOTE algorithm are added to the training set. The number of negatives is set to \code{ratio*(fp*npos + npos)}. If no enough negatives are available in the partition, then all the negatives in the partition are used to train the base RF associated to the partition. 
 }
 \value{

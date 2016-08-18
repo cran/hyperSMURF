@@ -5,7 +5,7 @@ Synthetic imbalanced data generator
 }
 \description{
 A variable number of minority and majority class examples are generated. All the features of the majority class are distributed according 
-to a gausian distributin with mean=0 and sd=1. Of the overall n.features, n.inf. features of the minority class are distributed according to a gaussian centered in 1 with standard deviation sd.
+to a Gaussian distribution with mean=0 and sd=1. Of the overall n.features, n.inf. features of the minority class are distributed according to a gaussian centered in 1 with standard deviation sd.
 }
 \usage{
 imbalanced.data.generator(n.pos=100, n.neg=2000, 
@@ -13,7 +13,7 @@ imbalanced.data.generator(n.pos=100, n.neg=2000,
 }
 \arguments{
   \item{n.pos}{
-number of positive (minority clsss) examples (def. 100)
+number of positive (minority class) examples (def. 100)
 }
   \item{n.neg}{
 number of negative (majority class) examples  (def. 2000)
@@ -28,7 +28,7 @@ number of informative features (def. 2)
 standard deviation of the informative features (def.1)
 }
   \item{seed}{
-intialization seed for the random number generator. If 0 (def) current clock time is used.
+initialization seed for the random number generator. If 0 (def) current clock time is used.
 }
 }
 
