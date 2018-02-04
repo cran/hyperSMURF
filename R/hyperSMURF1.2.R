@@ -425,7 +425,7 @@ hyperSMURF.cv.parallel <- function (data, y, kk=5, n.part=10, fp=1, ratio=1, k=5
 
 
 # hyperSMURF cross-validation with correlation-based feature selection(parallel version)
-# At each step of the cross validattion a subset of features is selected on the traning set by choosing the features most correlated with 
+# At each step of the cross validatton a subset of features is selected on the traning set by choosing the features most correlated with 
 # the response variable and then used to train the ensembles
 # Input:
 # data : a data frame or matrix with the  data

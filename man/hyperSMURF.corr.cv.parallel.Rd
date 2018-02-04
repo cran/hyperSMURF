@@ -74,6 +74,11 @@ a vector with the cross-validated hyperSMURF probabilities (hyperSMURF scores).
 d <- imbalanced.data.generator(n.pos=10, n.neg=160, n.features=7, 
                                 n.inf.features=1, sd=0.3, seed=1);
 if (Sys.info()['sysname']!="Windows")
-    res<-hyperSMURF.corr.cv.parallel (d$data, d$labels, kk=2, n.part=2, fp=1, ratio=2, k=5, 
+    res<-hyperSMURF.corr.cv.parallel (d$data, d$labels, kk=2, n.part=2, fp=1, ratio=1, k=1, 
 	      ntree=5, mtry=2, n.feature=3, seed = 1, fold.partition=NULL, ncores=2, file="");
+}
+
+\references{
+M. Schubach, M. Re, P.N. Robinson and G. Valentini Imbalance-Aware Machine Learning for Predicting Rare and Common Disease-Associated Non-Coding Variants,
+Scientific Reports, Nature Publishing, 7:2959, 2017.
 }

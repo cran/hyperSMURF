@@ -18,3 +18,8 @@ The DESCRIPTION file:
 
 Maintainer: \packageMaintainer{hyperSMURF}
 }
+
+\references{
+M. Schubach, M. Re, P.N. Robinson and G. Valentini Imbalance-Aware Machine Learning for Predicting Rare and Common Disease-Associated Non-Coding Variants,
+Scientific Reports, Nature Publishing, 7:2959, 2017.
+}

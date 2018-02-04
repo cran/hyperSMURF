@@ -74,3 +74,8 @@ d <- imbalanced.data.generator(n.pos=10, n.neg=300, sd=0.3);
 res<-hyperSMURF.cv (d$data, d$labels, kk=2, n.part=3, fp=1, ratio=1, k=3, ntree=7, 
                     mtry=2, seed = 1, fold.partition=NULL);
 }
+
+\references{
+M. Schubach, M. Re, P.N. Robinson and G. Valentini Imbalance-Aware Machine Learning for Predicting Rare and Common Disease-Associated Non-Coding Variants,
+Scientific Reports, Nature Publishing, 7:2959, 2017.
+}

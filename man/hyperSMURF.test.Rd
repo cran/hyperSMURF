@@ -40,3 +40,8 @@ y <- ifelse(test$labels==1,1,0);
 pred <- ifelse(res>0.5,1,0);
 table(pred,y);
 }
+
+\references{
+M. Schubach, M. Re, P.N. Robinson and G. Valentini Imbalance-Aware Machine Learning for Predicting Rare and Common Disease-Associated Non-Coding Variants,
+Scientific Reports, Nature Publishing, 7:2959, 2017.
+}
