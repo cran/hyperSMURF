@@ -1,8 +1,8 @@
-9732b86407dc36be36f8d815d6114c03 *DESCRIPTION
+bfc200ce6e82d8a3de3f84685e71fc9c *DESCRIPTION
 83c6aeaf916fed135611d4a109b9ac80 *NAMESPACE
-2b847e6861bcca2e247d176b1bf7d84e *R/hyperSMURF1.2.R
-80ac8b68ab628a53b951a681061be774 *build/partial.rdb
-874b942cc941b143492117a41dd49fa7 *inst/doc/hyperSMURF-manual.pdf
+26e78197f77535ddd2dfb1cfbfa4fd91 *R/hyperSMURF1.2.R
+88ea49b47f61ac75cfdd275e69a821a2 *build/partial.rdb
+c6c629b8febf6c4b86c9a34fa4a7be59 *inst/doc/hyperSMURF-manual.pdf
 d789609de6706506e9d7dbba27754b20 *inst/doc/index.html
 a6a89554ed55d8f177cd74ff9643e409 *man/do.random.partition.Rd
 17ac5dc043fde5ca1de721e738189645 *man/do.stratified.cv.data.Rd

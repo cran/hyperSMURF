@@ -1,6 +1,6 @@
 
-# hyperSMURF 1.0
-# August 2016
+# hyperSMURF 1.1.4
+# March 2018
 
 
 library(randomForest);
@@ -165,7 +165,8 @@ hyperSMURF.train.parallel <- function (data, y, n.part=10, fp=1, ratio=1, k=5, n
    i=0;
    rf.list <- foreach(i = 1:n.part, .packages="randomForest", .inorder=FALSE) %dopar% {
                        cat("Training of ensemble ", i, " started \n");	 
-                       rm(data.train); gc(); 
+                       rm(data.train); 
+					   gc(); 
                        # SMOTE oversampling
 	                   data.min.over <- smote(data.min, fp=fp, k=k);
 	                   n.data.min.over <- nrow(data.min.over);	  
@@ -179,7 +180,8 @@ hyperSMURF.train.parallel <- function (data, y, n.part=10, fp=1, ratio=1, k=5, n
 	                      indices.maj <- ind.part;  	   
 	                   data.train <- rbind(data.min.over, data[indices.maj,]);
 	                   y <- as.factor(c(rep(1,n.data.min.over), rep(0, length(indices.maj))));
-                       randomForest(data.train, y, ntree = ntree, mtry = mtry, cutoff = cutoff);		  
+                       rf <- randomForest(data.train, y, ntree = ntree, mtry = mtry, cutoff = cutoff);	
+					   rf	  
    } # end foreach
    stopImplicitCluster();
    gc();
@@ -265,7 +267,8 @@ hyperSMURF.test.parallel <- function (data, HSmodel, ncores=0)  {
   i=0;
   prob <- foreach(i = 1:n.models, .combine = "+",  .packages="randomForest", .inorder=FALSE) %dopar% { 
                                      gc();
-                                     predict(HSmodel[[i]], data, type="prob")[,2];  
+                                     pp <- predict(HSmodel[[i]], data, type="prob")[,2];  
+									 pp
   }
   stopImplicitCluster();
   gc();
