@@ -58,7 +58,7 @@ A list of trained RF models. Each element of the list is a \code{randomForest} o
 }
 
 \seealso{
-\code{\link{hyperSMURF.test}}, \code{\link{hyperSMURF.test.parallel}},  \code{\link{hyperSMURF.train.parallel}}
+\code{\link{hyperSMURF.test}}
 }
 \examples{
 train <- imbalanced.data.generator(n.pos=20, n.neg=1000, 

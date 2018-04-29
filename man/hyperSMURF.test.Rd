@@ -17,7 +17,7 @@ hyperSMURF.test(data, HSmodel)
 a data frame or matrix with the test data. Rows: examples; columns: features
 }
   \item{HSmodel}{
-a list including the trained random forest models. The models have been trained with \code{\link{hyperSMURF.train.parallel}} or with \code{\link{hyperSMURF.train}}
+a list including the trained random forest models. The models have been trained with \code{\link{hyperSMURF.train}}
 }
 }
 
@@ -26,7 +26,7 @@ a named vector with the computed probabilities for each example (hyperSMURF scor
 }
 
 \seealso{
-\code{\link{hyperSMURF.test.parallel}}, \code{\link{hyperSMURF.train.parallel}}, \code{\link{hyperSMURF.train}}
+\code{\link{hyperSMURF.train}}
 }
 \examples{
 train <- imbalanced.data.generator(n.pos=20, n.neg=1000, 

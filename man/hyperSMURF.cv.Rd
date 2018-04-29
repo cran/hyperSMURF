@@ -67,7 +67,7 @@ a vector with the cross-validated hyperSMURF probabilities (hyperSMURF scores).
 }
 
 \seealso{
-\code{\link{hyperSMURF.corr.cv.parallel}}, \code{\link{hyperSMURF.corr.cv.parallel}}
+\code{\link{hyperSMURF.train}}, \code{\link{hyperSMURF.test}}
 }
 \examples{
 d <- imbalanced.data.generator(n.pos=10, n.neg=300, sd=0.3);

@@ -15,7 +15,7 @@ hyperSMURF.test.thresh(data, HSmodel)
 a data frame or matrix with the test data. Rows: examples; columns: features
 }
   \item{HSmodel}{
-a list including the trained random forest models. The models have been trained with \code{\link{hyperSMURF.train.parallel}} or with \code{\link{hyperSMURF.train}}. The threshold is embedded in the model according to the \code{cutoff} value set in the training phase.
+a list including the trained random forest models. The models have been trained with \code{\link{hyperSMURF.train}}. The threshold is embedded in the model according to the \code{cutoff} value set in the training phase.
 }
 }
 \value{
@@ -23,7 +23,7 @@ a named vector with the computed probabilities for each example (HyeprSMURF thre
 }
 
 \seealso{
-\code{\link{hyperSMURF.test}}, \code{\link{hyperSMURF.test.parallel}}, \code{\link{hyperSMURF.train.parallel}}, \code{\link{hyperSMURF.train}}
+\code{\link{hyperSMURF.test}}, \code{\link{hyperSMURF.train}}
 }
 \examples{
 train <- imbalanced.data.generator(n.pos=20, n.neg=500, 

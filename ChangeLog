@@ -1,0 +1,5 @@
+2018-04-28  Giorgio Valentini <valentini@di.unimi.it>
+
+* The new package v. 2.0 includes only the sequential version of hyperSMURF. 
+
+* The multicore implementation has been completely removed form the package, since a new more efficient, fast and scalable version is under development and will be available soon

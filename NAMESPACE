@@ -1,5 +1,5 @@
 exportPattern("^[[:alpha:]]+")
 
-import(unbalanced, randomForest, foreach, iterators, doParallel, parallel)
+import(unbalanced, randomForest)
 importFrom("stats", "cor", "predict", "rnorm")
 
